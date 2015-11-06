@@ -1,4 +1,4 @@
-split.controller('splitController', function($scope, $sce, $cookies, $route){
+split.controller('splitController', function($scope, $sce, $cookies, $window){
 
 
 	if($cookies.get('screenOne')){
@@ -44,12 +44,11 @@ split.controller('splitController', function($scope, $sce, $cookies, $route){
 	}
 
 	$('#clearAll').on('click', function(){
-		console.log('here111');
 		$cookies.remove('screenOne');
 		$cookies.remove('screenTwo');
 		$cookies.remove('screenThree');
 		$cookies.remove('screenFour');	
-		location.reload();
+		$window.location.reload();
 	})
 
 	$('form').hide();
