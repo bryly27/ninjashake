@@ -16,19 +16,19 @@ split.config(function($stateProvider, $urlRouterProvider){
 			templateUrl: './partials/one.html',
 		})
 		.state('splittwitch.one', {
-			url: '/splittwitch/one',
+			url: '/one',
 			templateUrl: './partials/one.html',
 		})
 		.state('splittwitch.two', {
-			url: '/splittwitch/two',
+			url: '/two',
 			templateUrl: './partials/two.html',
 		})
 		.state('splittwitch.three', {
-			url: '/splittwitch/three',
+			url: '/three',
 			templateUrl: './partials/three.html',
 		})
 		.state('splittwitch.four', {
-			url: '/splittwitch/four',
+			url: '/four',
 			templateUrl: './partials/four.html',
 		})
 

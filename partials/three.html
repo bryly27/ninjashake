@@ -1,56 +1,57 @@
 <div ng-controller="splitController">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3 channel" ng-class="{black: !splitOneVid}">
-				<iframe ng-src="{{splitOneVid}}" frameborder="0" scrolling="no" height="50%;" width="100%"></iframe>
-				<div class="form">
-					<form ng-submit="submitOne(one)">
-						<input type="text" ng-model="one" placeholder="channel 1">
-						<input type="submit">
-					</form>
-				</div>
-			</div>
+	<div class="row">
 
-			<div class="col-md-12">
-				<br>
-				<div class="row">
+		<div class="col-md-9">
+			<div class="row">
 
+				<div class="col-md-6">
+					<div class="channel">
 
-
-
-					<div class="col-md-6 channel" ng-class="{black: !splitTwoVid}">
-						<iframe ng-src="{{splitTwoVid}}" frameborder="0" scrolling="no" height="48%;" width="100%"></iframe>
 						<div class="form">
-							<form ng-submit="submitTwo(two)">
-								<input type="text" ng-model="two" placeholder="channel 2">
-								<input type="submit">
-							</form>
+						  <form ng-submit="submitOne(one)">
+						    <input type="text" ng-model="one" placeholder="channel 1">
+						    <input type="submit">
+						  </form>
 						</div>
+						<iframe ng-src="{{splitOneVid}}" frameborder="0" scrolling="no" height="50%;" width="100%" position="relative"></iframe>
 
 					</div>
+				</div>
 
-					<div class="col-md-6 channel" ng-class="{black: !splitThreeVid}">
-						<iframe ng-src="{{splitThreeVid}}" frameborder="0" scrolling="no" height="48%;" width="100%"></iframe>
+				<div class="col-md-6">
+					<div class="channel">
+
 						<div class="form">
-							<form ng-submit="submitThree(three)">
-								<input type="text" ng-model="three" placeholder="channel 3">
-								<input type="submit">
-							</form>
+						  <form ng-submit="submitTwo(two)">
+						    <input type="text" ng-model="two" placeholder="channel 2">
+						    <input type="submit">
+						  </form>
 						</div>
+						<iframe ng-src="{{splitTwoVid}}" frameborder="0" scrolling="no" height="50%;" width="100%" position="relative"></iframe>
 
 					</div>
+				</div>
 
+			</div>
 
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
 
-
+					<div class="channel channel3">
+						<div class="form">
+						  <form ng-submit="submitThree(three)">
+						    <input type="text" ng-model="three" placeholder="channel 3">
+						    <input type="submit">
+						  </form>
+						</div>
+						<iframe ng-src="{{splitThreeVid}}" frameborder="0" scrolling="no" height="50%;" width="100%" position="relative"></iframe>
+					</div>
 
 				</div>
 
 
-
-
-
 			</div>
+
 
 
 
@@ -58,12 +59,35 @@
 
 		</div>
 
+		<div class="col-md-3">
 
+			<ul class="nav nav-pills">
+			  <li role="presentation" class="active"><a href="" ng-click="showChat(1)">One</a></li>
+			  <li role="presentation"><a href="" ng-click="showChat(2)">Two</a></li>
+			  <li role="presentation"><a href="" ng-click="showChat(3)">Three</a></li>
+			</ul>
 
+			<div ng-show="chatbox === 1">
+				<iframe ng-src="{{splitOneChat}}" frameborder="0" scrolling="no" height="100%" width="100%;" position="relative"></iframe>
+			</div>
+			
+			<div ng-show="chatbox === 2">
+				<iframe ng-src="{{splitTwoChat}}" frameborder="0" scrolling="no" height="100%" width="100%;" position="relative"></iframe>
+			</div>
 
+			<div ng-show="chatbox === 3">
+				<iframe ng-src="{{splitThreeChat}}" frameborder="0" scrolling="no" height="100%" width="100%;" position="relative"></iframe>
+			</div>
+
+		</div>
 
 	</div>
 
 
-</div>
 
+
+
+
+
+
+</div>

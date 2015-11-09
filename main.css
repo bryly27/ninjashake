@@ -1,5 +1,5 @@
 .top {
-	padding: 55px 20px 20px 20px;
+	padding: 55px 20px 100px 20px;
 	background-color: black;
 	height: 100%;
 }
@@ -57,6 +57,10 @@
 	margin: 10px 20px;
 }
 
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+	background-color: #282828;
+}
+
 @media (max-width: 991px) {
 	.body {
 		background-position: 50% 50%;
@@ -75,3 +79,4 @@
 		font-size: 30px;
 	}
 }
+

@@ -23,23 +23,40 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
 <div class="top">
 
 
 	<div ui-view>
+
+
+
 		<div ng-controller="splitController">
-			<div class="container">
-				<div class="channel" ng-class="{black: !splitOneVid}">
-					<iframe ng-src="{{splitOneVid}}" frameborder="0" scrolling="no" height="60%;" width="100%"></iframe>
-					<div class="form">
-						<form ng-submit="submitOne(one)">
-							<input type="text" ng-model="one" placeholder="channel 1">
-							<input type="submit">
-						</form>
-					</div>
-				</div>
-			</div>
+
+
+      <div class="row">
+        <div class="col-md-9">
+          <div class="channel">
+            <div class="form">
+              <form ng-submit="submitOne(one)">
+                <input type="text" ng-model="one" placeholder="channel 1">
+                <input type="submit">
+              </form>
+            </div>
+            <iframe ng-src="{{splitOneVid}}" frameborder="0" scrolling="no" height="100%;" width="100%" position="relative"></iframe>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <iframe ng-src="{{splitOneChat}}" frameborder="0" scrolling="no" height="100%" width="100%;" position="relative"></iframe>
+        </div>
+      </div>
+
 		</div>
+
+
+
+
+
 	</div>
 
 </div>

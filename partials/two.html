@@ -1,35 +1,60 @@
 <div ng-controller="splitController">
-
-
-<div class="container">
 	<div class="row">
-		<div class="col-md-6 channel" ng-class="{black: !splitOneVid}">
-			<iframe ng-src="{{splitOneVid}}" frameborder="0" scrolling="no" height="80%;" width="100%"></iframe>
-			<div class="form">
-				<form ng-submit="submitOne(one)">
-					<input type="text" ng-model="one" placeholder="channel 1">
-					<input type="submit">
-				</form>
+
+		<div class="col-md-9">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="channel">
+
+						<div class="form">
+						  <form ng-submit="submitOne(one)">
+						    <input type="text" ng-model="one" placeholder="channel 1">
+						    <input type="submit">
+						  </form>
+						</div>
+						<iframe ng-src="{{splitOneVid}}" frameborder="0" scrolling="no" height="55%;" width="100%" position="relative"></iframe>
+
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="channel">
+
+						<div class="form">
+						  <form ng-submit="submitTwo(two)">
+						    <input type="text" ng-model="two" placeholder="channel 1">
+						    <input type="submit">
+						  </form>
+						</div>
+						<iframe ng-src="{{splitTwoVid}}" frameborder="0" scrolling="no" height="55%;" width="100%" position="relative"></iframe>
+
+					</div>
+				</div>
+
 			</div>
+
+
+
+
 		</div>
-		<div class="col-md-6 channel" ng-class="{black: !splitTwoVid}">
-			<iframe ng-src="{{splitTwoVid}}" frameborder="0" scrolling="no" height="80%;" width="100%"></iframe>
-			<div class="form">
-				<form ng-submit="submitTwo(two)">
-					<input type="text" ng-model="two" placeholder="channel 2">
-					<input type="submit">
-				</form>
+
+		<div class="col-md-3">
+			<ul class="nav nav-pills">
+			  <li role="presentation" class="active"><a href="" ng-click="showChat(1)">One</a></li>
+			  <li role="presentation"><a href="" ng-click="showChat(2)">Two</a></li>
+			</ul>
+
+			<div ng-show="chatbox === 1">
+				<iframe ng-src="{{splitOneChat}}" frameborder="0" scrolling="no" height="100%" width="100%;" position="relative"></iframe>
 			</div>
+
+			<div ng-show="chatbox === 2">
+				<iframe ng-src="{{splitTwoChat}}" frameborder="0" scrolling="no" height="100%" width="100%;" position="relative"></iframe>
+			</div>
+
 		</div>
-
-
-
 
 	</div>
-</div>
-
-
-
 
 
 
